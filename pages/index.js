@@ -1,92 +1,114 @@
- 
-import Link from 'next/link'
-import Image from 'next/image'
-import { Flex, Box, Text, Button } from '@chakra-ui/react'
-import { baseUrl, fetchApi } from '../utils/fetchApi'
-import Property from '../components/layout/Property'
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Flex,
+  Box,
+  Text,
+  Button,
+  Grid,
+  GridItem,
+  Heading,
+} from "@chakra-ui/react";
+import { baseUrl, fetchApi } from "../utils/fetchApi";
+import Property from "../components/layout/Property";
+import homeImage from "../assets/panorama.jpg";
+import homeImage2 from "../assets/panorama2.jpg";
 
 const Banner = ({
   purpose,
-  title1,
+  mainTitle,
   title2,
-  desc1,
+  description,
   desc2,
   buttonText,
   linkName,
-  imageUrl
+  imageUrl,
 }) => (
-  <Flex flexWrap={"wrap"} justifyContent={"space-between"} alignItems={"center"} m={"8"} marginTop={"32"}>
-    <Image src={imageUrl} alt={"banner"} width={850} height={480}/>
-    <Box>
-        <Text color={"gray.500"} fontSize={"sm"} fontWeight={"medium"}>{ purpose }</Text>
-        <Text fontSize={"3xl"} fontWeight={"bold"}>
-          { title1 } <br/> {title2}
-        </Text>
-        <Text fontSize={"lg"} paddingTop={"3"} paddingBottom={"3"} color={"gary.700"}>
-          { desc1 } <br/> { desc2 }
-        </Text>
-        <Button fontSize={"xl"} bg={"blue.300"}>
-          <Link href={ linkName }>{ buttonText }</Link>
-        </Button>
+  <Flex
+    flexWrap={"wrap"}
+    justifyContent={"space-between"}
+    alignItems={"center"}
+    marginBottom={"32"}
+    className="home-flex"
+  >
+    <Image src={imageUrl} alt={"banner"} width={2000} height={550} />
+
+    <Box className="home-text">
+      <Heading as="h1" fontWeight={"normal"} color={"white"} size="3xl">
+        {mainTitle}
+      </Heading>
+      <Text
+        fontSize={"2xl"}
+        paddingTop={"3"}
+        paddingBottom={"3"}
+        color={"cyan.400"}
+      >
+        {description}
+      </Text>
+      <Button
+        fontSize={"xl"}
+        variant="outline"
+        className="home-btn"
+        color={"cyan.400"}
+      >
+        <Link href={linkName}>{buttonText}</Link>
+      </Button>
     </Box>
-  </Flex> 
-)
-
- 
-
-
+  </Flex>
+);
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
- 
-  // console.log( propertiesForSale, propertiesForRent )
-
-
   return (
-     <> 
-         
-        <Banner
-            purpose={`RENT A HOME`}
-            title1={`Rental Homes for`}
-            title2={`Everyone`}
-            desc1={`Explore Apartments, Villas, Homes`}
-            desc2={`and more`}
-            buttonText={`Explore Renting`} 
-            linkName={`/search?purpose=for-rent`}
-            imageUrl={`https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4`} 
-        />  
-       <Flex flexWrap={`wrap`} justifyContent={"center"}>
-            { propertiesForRent.map((property, index) => (
-              <Property property={property} key={index}/>
-            ))}
-       </Flex>
+    <>
+      <Banner
+        mainTitle={`Aluguel para todos os gostos`}
+        description={`Temos mansões, villas, apartementos e muito mais!`}
+        buttonText={`Alugue agora`}
+        linkName={`/search?purpose=for-rent`}
+        imageUrl={homeImage}
+        className="home-banner"
+      />
 
-       <Banner
-          purpose={`BUY A HOME`}
-          title1={`Find, buy & Own Your`}
-          title2={`Dream Home`}
-          desc1={`Explore Apartments, Villas, Homes`}
-          desc2={`and more`}
-          buttonText={`Explore Buying`} 
-          linkName={`/search?purpose=for-sale`}
-          imageUrl={`https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008`} 
-       />
-        <Flex flexWrap={`wrap`} justifyContent={"center"}>
-            { propertiesForSale.map((property, index) => (
-              <Property property={property} key={index}/>
-            ))}
-       </Flex>
-     </>
-  )
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        gap={4}
+        marginBottom={"32"}
+        className="grid-images"
+      >
+        {propertiesForRent.map((property, index) => (
+          <Property property={property} key={index} />
+        ))}
+      </Grid>
+
+      <Banner
+        mainTitle={`Encontre e compre seu lar`}
+        description={`Condomínios, villas, residências e muito mais!`}
+        buttonText={`Compre agora`}
+        linkName={`/search?purpose=for-sale`}
+        imageUrl={homeImage2}
+        className="home-banner"
+      />
+
+      <Grid templateColumns="repeat(3, 1fr)" gap={4} className="grid-images">
+        {propertiesForSale.map((property, index) => (
+          <Property property={property} key={index} />
+        ))}
+      </Grid>
+    </>
+  );
 }
 
-
-export async function getStaticProps(){
-  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
-  const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
+export async function getStaticProps() {
+  const propertyForSale = await fetchApi(
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
+  );
+  const propertyForRent = await fetchApi(
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
+  );
   return {
     props: {
-      propertiesForSale: propertyForSale?.hits, 
+      propertiesForSale: propertyForSale?.hits,
       propertiesForRent: propertyForRent?.hits,
-    } 
-  }
+    },
+  };
 }
