@@ -8,14 +8,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Imo Realty Estate</title>
+        <title>Royal Realty Imobiliária</title>
       </Head>
 
       <header className="header">
         <Navbar />
       </header>
 
-      <Box width={"100%"} m={"auto"}>
+      <Box width={"100%"} m={"auto"} marginBottom={"24"}>
         <main>{children}</main>
       </Box>
       <footer>

@@ -40,30 +40,31 @@ const PropertyDetails = ({
   },
 }) => {
   return (
-    <Box maxWidth={"980px"} margin={"auto"} p={"4"}>
+    <Box maxWidth={"1980px"} margin={"auto"} p={"4"}>
       {photos && <ImageScrollBar data={photos} />}
       <Box w={"full"} p={"6"}>
         <Flex
           paddingTop={"2"}
           alignItems={"center"}
           justifyContent={"space-between"}
+          maxWidth={"300px"}
         >
           <Flex alignItems={"center"}>
             <Box paddingRight={"3"} color={"green.400"}>
               {isVerified && (
                 <GoVerified
-                  color={"#1C9CEA"}
+                  color={"#63B3ED"}
                   title={"Este imóvel é verificado"}
                 />
               )}
             </Box>
-            <Text fontWeight={"bold"} fontSize={"lg"}>
-              AED {millify(price)}
+            <Text fontWeight={"bold"} fontSize={"lg"} color={"blue.700"}>
+              US$ {millify(price)}
               {rentFrequency &&
                 `/${rentFrequency === "monthly" ? "Mensal" : rentFrequency}`}
             </Text>
           </Flex>
-          <Box border={"2px"} borderRadius={"100%"} color={"green.300"}>
+          <Box border={"2px"} borderRadius={"100%"} color={"blue.300"}>
             <Avatar size={"sm"} src={agency?.logo?.url} />
           </Box>
         </Flex>
@@ -73,11 +74,11 @@ const PropertyDetails = ({
           p={"1"}
           justifyContent={"space-between"}
           w={"300px"}
-          color={"green.300"}
+          color={"blue.300"}
         >
           {rooms}
           <FaBed />| {baths}
-          <FaBath />| {millify(area)} sqft <BsGridFill />
+          <FaBath />| {millify(area)} pés qd <BsGridFill />
         </Flex>
 
         <Divider marginTop={"4"} />
@@ -88,6 +89,7 @@ const PropertyDetails = ({
           marginTop={"2"}
           marginBottom={"4"}
           fontWeight={"bold"}
+          color={"blue.700"}
         >
           {title.toUpperCase()}
         </Text>
@@ -106,8 +108,8 @@ const PropertyDetails = ({
             p={"3"}
           >
             <Text>Tipo:</Text>
-            <Text fontWeight={"bold"}>
-              {type === "property" ? "Imóvel" : type}
+            <Text fontWeight={"bold"} color={"blue.700"}>
+              {type === "property" ? "Residencial" : type}
             </Text>
           </Flex>
           <Flex
@@ -118,7 +120,7 @@ const PropertyDetails = ({
             p={"3"}
           >
             <Text>Propósito:</Text>
-            <Text fontWeight={"bold"}>
+            <Text fontWeight={"bold"} color={"blue.700"}>
               {purpose === "for-sale" ? "Venda" : "Aluguel"}
             </Text>
           </Flex>
@@ -131,7 +133,7 @@ const PropertyDetails = ({
               p={"3"}
             >
               <Text>Mobiliado:</Text>
-              <Text fontWeight={"bold"}>
+              <Text fontWeight={"bold"} color={"blue.700"}>
                 {furnishingStatus === "furnished"
                   ? "Com mobília"
                   : "Sem mobília"}
@@ -145,7 +147,7 @@ const PropertyDetails = ({
           <AccordionItem>
             <h2>
               <AccordionButton
-                _expanded={{ bg: "#68D391", color: "" }}
+                _expanded={{ bg: "#63B3ED", color: "" }}
                 paddingLeft={"0"}
               >
                 <Box flex="1" textAlign="left">
@@ -153,6 +155,7 @@ const PropertyDetails = ({
                     fontSize={"lg"}
                     fontWeight={"bold"}
                     textTransform={"uppercase"}
+                    color={"blue.700"}
                   >
                     Ver mais detalhes deste imóvel
                   </Text>
@@ -173,8 +176,9 @@ const PropertyDetails = ({
               fontWeight={"black"}
               marginTop={"12"}
               marginBottom={"2"}
+              color={"blue.700"}
             >
-              Intens Inclusos nesse imóvel:
+              Itens Inclusos nesse imóvel:
             </Text>
           )}
           <Flex flexWrap={"wrap"}>
@@ -187,7 +191,7 @@ const PropertyDetails = ({
                   fontSize={"small"}
                   p={"2"}
                   m={"1"}
-                  bg={"green.200"}
+                  bg={"blue.300"}
                   borderRadius={"3"}
                 >
                   {amenity.text}

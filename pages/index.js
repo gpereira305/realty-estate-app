@@ -31,7 +31,7 @@ const Banner = ({
     marginBottom={"32"}
     className="home-flex"
   >
-    <Image src={imageUrl} alt={"banner"} width={2000} height={550} />
+    <Image src={imageUrl} alt={"banner"} width={2000} height={650} />
 
     <Box className="home-text">
       <Heading as="h1" fontWeight={"normal"} color={"white"} size="3xl">
@@ -41,7 +41,7 @@ const Banner = ({
         fontSize={"2xl"}
         paddingTop={"3"}
         paddingBottom={"3"}
-        color={"cyan.400"}
+        color={"blue.300"}
       >
         {description}
       </Text>
@@ -49,7 +49,7 @@ const Banner = ({
         fontSize={"xl"}
         variant="outline"
         className="home-btn"
-        color={"cyan.400"}
+        color={"blue.300"}
       >
         <Link href={linkName}>{buttonText}</Link>
       </Button>
@@ -69,6 +69,17 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         className="home-banner"
       />
 
+      <Box>
+        <Heading
+          as="h1"
+          textAlign="center"
+          marginBottom={"50px"}
+          color={"blue.700"}
+        >
+          Disponíveis para Aluguel
+        </Heading>
+      </Box>
+
       <Grid
         templateColumns="repeat(3, 1fr)"
         gap={4}
@@ -81,13 +92,24 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
       </Grid>
 
       <Banner
-        mainTitle={`Encontre e compre seu lar`}
+        mainTitle={`Adquira seu novo lar hoje mesmo`}
         description={`Condomínios, villas, residências e muito mais!`}
         buttonText={`Compre agora`}
         linkName={`/search?purpose=for-sale`}
         imageUrl={homeImage2}
         className="home-banner"
       />
+
+      <Box>
+        <Heading
+          as="h1"
+          textAlign="center"
+          marginBottom={"50px"}
+          color={"blue.700"}
+        >
+          Disponíveis para compra
+        </Heading>
+      </Box>
 
       <Grid templateColumns="repeat(3, 1fr)" gap={4} className="grid-images">
         {propertiesForSale.map((property, index) => (

@@ -39,7 +39,7 @@ const Property = ({
             <>
               <Image
                 src={coverPhoto ? coverPhoto.url : defaultImage}
-                alt={"residência"}
+                alt={"Imóvel"}
                 width={600}
                 height={360}
                 title={title}
@@ -56,22 +56,22 @@ const Property = ({
             justifyContent={"space-between"}
           >
             <Flex alignItems={"center"}>
-              <Box paddingRight={"3"} color={"green.400"}>
+              <Box paddingRight={"3"} color={"blue.700"}>
                 {isVerified && (
                   <GoVerified
-                    color={"#1C9CEA"}
+                    color={"#63B3ED"}
                     title={"Este imóvel é verificado"}
                   />
                 )}
               </Box>
 
-              <Text fontWeight={"bold"} fontSize={"lg"}>
+              <Text fontWeight={"bold"} fontSize={"lg"} color={"blue.700"}>
                 US$ {millify(price)}
                 {rentFrequency &&
                   `/${rentFrequency === "monthly" ? "Mensal" : rentFrequency}`}
               </Text>
             </Flex>
-            <Box border={"2px"} borderRadius={"100%"} color={"green.300"}>
+            <Box border={"2px"} borderRadius={"100%"} color={"blue.300"}>
               <Avatar size={"sm"} src={agency?.logo?.url} />
             </Box>
           </Flex>
@@ -81,7 +81,7 @@ const Property = ({
             p={"1"}
             justifyContent={"space-between"}
             w={"210px"}
-            color={"green.300"}
+            color={"blue.300"}
           >
             {rooms}
             <FaBed /> | {baths}

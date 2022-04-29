@@ -26,33 +26,33 @@ const Search = ({ properties }) => {
         <Flex
           cursor={"pointer"}
           bg={"gray.100"}
-          p={"6"}
+          p={"12"}
           fontWeight={"bold"}
           fontSize={"lg"}
           justifyContent={"center"}
           alignItems={"center"}
-          marginTop={"5%"}
           onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
         >
-          <Text>Filtrar Imóveis</Text>
-          <Icon paddingLeft={"2"} w={"7"} as={BiDownArrow} />
+          <Text color={"blue.700"}>Filtrar Imóveis</Text>
+          <Icon paddingLeft={"2"} w={"7"} as={BiDownArrow} color={"#2C5282"} />
         </Flex>
 
         {searchFilters && <SearchFilters />}
-        <Flex justifyContent={"center"} marginTop={"38"} marginBottom={"15"}>
+        <Flex justifyContent={"center"} marginBottom={"24"}>
           <Heading
             as="h3"
             size="xl"
             p={"4"}
+            marginTop={"24"}
             fontWeight={"normal"}
             textAlign="center"
             color={"blue.700"}
           >
             {(router.query.purpose === "for-rent" &&
-              "Imóveis Disponíveis para Aluguel") ||
+              "Imóveis disponíveis para aluguel") ||
               (router.query.purpose === "for-sale" &&
-                "Imóveis Disponíveis para Venda") ||
-              "Imóveis Disponíveis para venda e aluguel"}
+                "Imóveis disponíveis para venda") ||
+              "Imóveis disponíveis para venda e aluguel"}
           </Heading>
         </Flex>
 
