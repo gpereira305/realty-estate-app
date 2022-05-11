@@ -1,5 +1,5 @@
 {
-  "name": "imorealty",
+  "name": "royalrealty",
   "private": true,
   "scripts": {
     "dev": "next dev",
