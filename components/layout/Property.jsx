@@ -72,7 +72,7 @@ const Property = ({
               </Text>
             </Flex>
             <Box border={"2px"} borderRadius={"100%"} color={"blue.300"}>
-              <Avatar size={"sm"} src={agency?.logo?.url} />
+              <Avatar size={"sm"} src={agency?.logo?.url} title="Construtora"/>
             </Box>
           </Flex>
 
@@ -84,8 +84,8 @@ const Property = ({
             color={"blue.300"}
           >
             {rooms}
-            <FaBed /> | {baths}
-            <FaBath /> | {millify(area)} pés qd <BsGridFill />
+            <FaBed title="Dormitório"/> | {baths}
+            <FaBath title="Banheiro"/> | {millify(area)} pés qd <BsGridFill title="Tamanho"/>
           </Flex>
           <Text fontSize={"xs"} title={title}>
             {title.length > 30

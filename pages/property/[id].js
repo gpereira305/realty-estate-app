@@ -39,6 +39,14 @@ const PropertyDetails = ({
     photos,
   },
 }) => {
+
+  // parseia de html tag para string
+  const summarized = (text) => {
+    const regex = /( |<([^>]+)>)/gi;
+    return text?.replace(regex, " ");
+  };
+
+
   return (
     <Box maxWidth={"1980px"} margin={"auto"} p={"4"}>
       {photos && <ImageScrollBar data={photos} />}
@@ -65,7 +73,7 @@ const PropertyDetails = ({
             </Text>
           </Flex>
           <Box border={"2px"} borderRadius={"100%"} color={"blue.300"}>
-            <Avatar size={"sm"} src={agency?.logo?.url} />
+            <Avatar size={"sm"} src={agency?.logo?.url} title="Construtora"/>
           </Box>
         </Flex>
 
@@ -77,8 +85,8 @@ const PropertyDetails = ({
           color={"blue.300"}
         >
           {rooms}
-          <FaBed />| {baths}
-          <FaBath />| {millify(area)} pés qd <BsGridFill />
+          <FaBed title="Dormitório"/>| {baths}
+          <FaBath title="Banheiro"/>| {millify(area)} pés qd <BsGridFill title="Tamanho"/>
         </Flex>
 
         <Divider marginTop={"4"} />
@@ -164,7 +172,7 @@ const PropertyDetails = ({
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4} color={"gray.700"} background={"gray.200"}>
-              <Text lineHeight={"2"}>{description} </Text>
+              <Text lineHeight={"2"}>{summarized(description)} </Text>
             </AccordionPanel>
           </AccordionItem>
         </Accordion>

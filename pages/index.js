@@ -62,7 +62,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
     <>
       <Banner
         mainTitle={`Aluguel para todos os gostos`}
-        description={`Temos mansões, villas, apartementos e muito mais!`}
+        description={`Temos mansões, villas, apartamentos e muito mais!`}
         buttonText={`Alugue agora`}
         linkName={`/search?purpose=for-rent`}
         imageUrl={homeImage}

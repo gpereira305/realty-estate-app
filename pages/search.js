@@ -48,11 +48,11 @@ const Search = ({ properties }) => {
             textAlign="center"
             color={"blue.700"}
           >
-            {(router.query.purpose === "for-rent" &&
-              "Imóveis disponíveis para aluguel") ||
-              (router.query.purpose === "for-sale" &&
-                "Imóveis disponíveis para venda") ||
+            {properties.length !== 0 ? `
+              ${(router.query.purpose === "for-rent" && "Imóveis disponíveis para aluguel") ||
+              (router.query.purpose === "for-sale" && "Imóveis disponíveis para venda") ||
               "Imóveis disponíveis para venda e aluguel"}
+            ` : ''} 
           </Heading>
         </Flex>
 
