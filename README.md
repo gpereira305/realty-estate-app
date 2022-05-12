@@ -1,6 +1,6 @@
 
 ## Table of contents
-* [Informações Gerais](#Informações Gerais) 
+* [Informações Gerais](#Informações-Gerais) 
 * [Instalação](#Instalação)
 * [License](#License)
 * [Demo](#Demo)
