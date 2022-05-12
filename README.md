@@ -1,7 +1,7 @@
 
 ## Table of contents
 * [Informações Gerais](#Informações Gerais) 
-* [Instalação](#Instalacao)
+* [Instalação](#Instalação)
 * [License](#License)
 * [Demo](#Demo)
 
