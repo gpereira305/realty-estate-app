@@ -1,14 +1,14 @@
 
 ## Table of contents
 * [Informações Gerais](#Informações Gerais) 
-* [Instalação](#Instalação)
+* [Instalação](#Instalacao)
 * [License](#License)
 * [Demo](#Demo)
 
 ## Informações Gerais
 Para a construção desse app foram utilizadas as seguintes tecnologias como React js para componetização, Chackra.ui para estilização do layout, axios para fazer o fetch da api, millify para formatação de números e Next js para performance no server rendering.
 
-## Instalação
+## Instalacao
 Para poder rodar esse app localmente é necessário o NodeJS >= v14 instalado em sua máquina, um editor de texto de sua preferência.
 
 Na raiz do projeto execute o comando 'npm install' e após todos os arquivos necessários serem baixados, dentro do mesmo diretório execute 'npm run dev' para que o projeto se inicie.
