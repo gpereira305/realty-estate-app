@@ -30,6 +30,10 @@ Esse projeto se encontra hospedado no seguinte endereço: https://realty-estate-
 
 *Seção exemplo 2
 ![img3](https://user-images.githubusercontent.com/66249777/167968090-29367d52-7332-46c5-8ecc-46c2c69e0b50.png)
+
+*Seção exemplo 3
+![img4](https://user-images.githubusercontent.com/66249777/167968114-50b5c068-9e48-4a93-99e8-fe710a5fc752.png)
  
 *Versão mobile
-![img4](https://user-images.githubusercontent.com/66249777/167968114-50b5c068-9e48-4a93-99e8-fe710a5fc752.png)
+![img5](https://user-images.githubusercontent.com/66249777/167968227-40291604-2141-4ce0-ab39-54d4f94d6d8c.png)
+
