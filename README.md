@@ -23,7 +23,7 @@ Esse projeto se encontra hospedado no seguinte endereço: https://realty-estate-
  
 ## Demo
 *HomePage
-![home](https://user-images.githubusercontent.com/66249777/153020034-096e9888-d6a7-44cf-b951-747737ab192f.png)
+![img](https://user-images.githubusercontent.com/66249777/167967984-1ac6ee09-922c-4abc-934a-18c452278c66.png)
 
 *Seção exemplo
 ![home3](https://user-images.githubusercontent.com/66249777/153020211-ae6737b9-a8d0-4cf0-8bc6-6f4a18894111.png)
