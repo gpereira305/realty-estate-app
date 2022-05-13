@@ -23,7 +23,7 @@ Esse projeto se encontra hospedado no seguinte endereço: https://realty-estate-
 
 ##Technologies
 Esse projeto contém as seguintes tecnologias:
-* Ract JS 
+* React JS 
 * Next JS
 * React-Icons 
 * Chakra UI
