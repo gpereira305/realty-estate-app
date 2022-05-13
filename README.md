@@ -21,7 +21,7 @@ Na opção de pesquisa é possível fazer uma filtragem detalhada de imóvies pa
 
 Esse projeto se encontra hospedado no seguinte endereço: https://realty-estate-app.vercel.app
 
-##Technologies
+## Technologies
 Esse projeto contém as seguintes tecnologias:
 * React JS 
 * Next JS
