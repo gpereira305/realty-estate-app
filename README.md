@@ -1,21 +1,34 @@
 
 ## Table of contents
-* [Informações Gerais](#Informações-Gerais) 
-* [Instalação](#Instalação)
+* [General info](#general-info)
+* [Installation](#Installation)
+* [Features](#Features)
+* [Technologies](#technologies)
 * [License](#License)
 * [Demo](#Demo)
 
-## Informações Gerais
-Para a construção desse app foram utilizadas as seguintes tecnologias como React js para componetização, Chackra.ui para estilização do layout, axios para fazer o fetch da api, millify para formatação de números e Next js para performance no server rendering.
+## General info
+Para a construção desse app foram utilizadas as seguintes tecnologias como React js para componetização, Chakra.ui para estilização do layout, api da Rapid API, millify para formatação de números e Next js para performance no server rendering.
 
-## Instalacao
+## Installation
 Para poder rodar esse app localmente é necessário o NodeJS >= v14 instalado em sua máquina, um editor de texto de sua preferência.
-
 Na raiz do projeto execute o comando 'npm install' e após todos os arquivos necessários serem baixados, dentro do mesmo diretório execute 'npm run dev' para que o projeto se inicie.
-
 Após a execução do comando abra um navegador de sua preferência e digite 'http://localhost:3000' para visualizar o projeto na web.
 
+## Features
+Essa aplicação possui 3 seções aonde o usuário pode fazer pesquisa personalizada, possui a opção de imóveis para compra e aluguel.
+Na opção de pesquisa é possível fazer uma filtragem detalhada de imóvies para compra e aluguel através de preço mínimo e máximo, menor e maior preço, tamanho do imóvel, quantidade de banheiros e quartos, mobiliado  e  o tipo de residência. 
+
 Esse projeto se encontra hospedado no seguinte endereço: https://realty-estate-app.vercel.app
+
+##Technologies
+Esse projeto contém as seguintes tecnologias:
+* Ract JS 
+* Next JS
+* React-Icons 
+* Chakra UI
+* Axios  
+* Rapid API
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
