@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -10,6 +9,16 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
 }
 
 a {
@@ -33,7 +42,7 @@ a {
 }
 
 .navbar-items {
-  width: calc(100% - 60px);
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -75,9 +84,14 @@ a {
 }
 
 
-/*++++++ Main e homepage +++++*/ 
-.home-flex img {
-  min-height: 25vh;
+/*++++++ Main e homepage +++++*/
+.home-flex span {
+  width: 100vw !important;
+  min-height: inherit !important;
+}
+
+.home-flex .home-hero {
+  object-fit: cover;
 }
 
 .home-flex,
@@ -88,29 +102,28 @@ a {
 .home-flex::before {
   content: "";
   position: absolute;
-  background: rgb(0 0 0 / 53%);
+  background: rgb(0 0 0 / 10%);
   width: 100%;
   height: 100%;
+  min-height: inherit;
   z-index: 1;
 }
 
-.image-cover::before {
-  content: "";
-  position: absolute;
-  background: rgba(0, 0, 0, 0.664);
+/* .image-cover {
+  height: 100%;
   width: 100%;
-  height: 98%;
-  top: 0;
-  bottom: 54px;
-  left: 0;
-  z-index: 1;
-  right: 0;
-  transition: all 0.4s ease-in-out;
+  min-height: 230px;
+} */
+
+.image-cover span {
+  width: 100% !important;
+  background: rgb(0 0 0 /10%) !important;
 }
 
 .homeImg {
   width: 100%;
-  transition: all 0.4s ease-in-out;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 
 .image-cover:hover .homeImg {
@@ -142,7 +155,8 @@ a {
 
 .grid-images {
   margin: auto;
-  width: calc(100% - 20px);
+  max-width: 1200px;
+  gap: 20px !important;
 }
 
 /*++++++ Footer +++++*/
@@ -155,7 +169,7 @@ a {
 
 .footer-list {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   min-width: 285px;
 }
 
@@ -195,12 +209,21 @@ a {
   .home-flex h1 {
     font-size: 2.5rem;
   }
+
   .home-flex p {
     font-size: 1rem;
   }
 
   .home-btn {
     font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .navbar-items,
+  .grid-images {
+    padding: 0 20px;
   }
 }
 
@@ -214,9 +237,14 @@ a {
     font-size: 0.8rem;
   }
 
+  .home-flex {
+    min-height: 45vh;
+  }
+
   .home-flex h1 {
     font-size: 2rem;
   }
+
   .home-flex p {
     font-size: 0.9rem;
   }

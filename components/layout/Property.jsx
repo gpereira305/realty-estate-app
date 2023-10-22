@@ -28,7 +28,7 @@ const Property = ({
         flexWrap={"wrap"}
         w={"100%"}
         p={"5"}
-        paddingTop={"0"}
+        padding={0}
         justifyContent={"flex-start"}
         cursor={"pointer"}
       >
@@ -72,7 +72,7 @@ const Property = ({
               </Text>
             </Flex>
             <Box border={"2px"} borderRadius={"100%"} color={"blue.300"}>
-              <Avatar size={"sm"} src={agency?.logo?.url} title="Construtora"/>
+              <Avatar size={"sm"} src={agency?.logo?.url} title={agency?.name}/>
             </Box>
           </Flex>
 

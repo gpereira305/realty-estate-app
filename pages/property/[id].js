@@ -48,7 +48,7 @@ const PropertyDetails = ({
 
 
   return (
-    <Box maxWidth={"1980px"} margin={"auto"} p={"4"}>
+    <Box maxWidth={"1200px"} margin={"auto"} p={"4"}>
       {photos && <ImageScrollBar data={photos} />}
       <Box w={"full"} p={"6"}>
         <Flex

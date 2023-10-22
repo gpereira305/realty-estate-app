@@ -25,13 +25,14 @@ const Banner = ({
   imageUrl,
 }) => (
   <Flex
-    flexWrap={"wrap"}
-    justifyContent={"space-between"}
+    justifyContent={"center"}
     alignItems={"center"}
     marginBottom={"32"}
     className="home-flex"
+    minHeight={"60vh"}
+    width={"100vw"}
   >
-    <Image src={imageUrl} alt={"banner"} width={2000} height={650} />
+    <Image className="home-hero" src={imageUrl} alt={"banner"} width={2000} height={650} />
 
     <Box className="home-text">
       <Heading as="h1" fontWeight={"normal"} color={"white"} size="3xl">
@@ -111,7 +112,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         </Heading>
       </Box>
 
-      <Grid templateColumns="repeat(3, 1fr)" gap={4} className="grid-images">
+      <Grid templateColumns="repeat(3, 1fr)" gap={20} className="grid-images">
         {propertiesForSale.map((property, index) => (
           <Property property={property} key={index} />
         ))}
